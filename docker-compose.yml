@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  web:
+    build: ./
+    ports:
+      - "9990:80"
+      - "9993:443"
+  db:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      
+#En build indico " ./ " porqué ejecuto el docker-compose up -d en la carpeta donde está el Dockerfile y el docker-compose
